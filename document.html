@@ -1,0 +1,5 @@
+<!doctype html>
+<html><head><title>Generated Document - Legalease</title><link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}"></head>
+<body><nav><a href="{{ url_for('home') }}">⚖ Legalease</a><a href="{{ url_for('history') }}">History</a></nav>
+<main class="narrow"><div class="toolbar"><h1>{{ row[1] }}</h1><a class="button" href="{{ url_for('download',doc_id=row[0]) }}">Download PDF</a></div>
+<div class="paper"><pre>{{ row[2] }}</pre></div><p class="muted">Created: {{ row[3] }}</p></main></body></html>

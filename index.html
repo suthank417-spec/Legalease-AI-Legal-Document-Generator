@@ -1,0 +1,8 @@
+<!doctype html>
+<html><head><title>Legalease</title><link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}"></head>
+<body><nav><b>⚖ Legalease</b><a href="{{ url_for('history') }}">History</a></nav>
+<main><section class="hero"><div><h1>AI-Powered Legal Document Generator</h1>
+<p>Create structured legal document drafts from simple details.</p><small>Educational drafting tool — review with a qualified legal professional before relying on any document.</small></div></section>
+<h2>Choose a Document</h2><div class="grid">
+{% for key,d in documents.items() %}<a class="card" href="{{ url_for('create',doc_type=key) }}"><h3>{{ d.name }}</h3><p>Generate a customizable draft</p><span>Start →</span></a>{% endfor %}
+</div></main></body></html>

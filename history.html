@@ -1,0 +1,4 @@
+<!doctype html>
+<html><head><title>History - Legalease</title><link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}"></head>
+<body><nav><a href="{{ url_for('home') }}">⚖ Legalease</a></nav><main class="narrow"><h1>Document History</h1>
+{% if rows %}<div class="history">{% for r in rows %}<a href="{{url_for('view_document',doc_id=r[0])}}"><b>{{r[1]}}</b><span>{{r[2]}}</span></a>{% endfor %}</div>{% else %}<p>No documents generated yet.</p>{% endif %}</main></body></html>

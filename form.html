@@ -1,0 +1,7 @@
+<!doctype html>
+<html><head><title>{{ doc.name }} - Legalease</title><link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}"></head>
+<body><nav><a href="{{ url_for('home') }}">← Legalease</a><a href="{{ url_for('history') }}">History</a></nav>
+<main class="narrow"><h1>{{ doc.name }}</h1><p class="muted">Enter the details below. Legalease will generate a structured draft.</p>
+{% with messages=get_flashed_messages() %}{% for m in messages %}<div class="alert">{{m}}</div>{% endfor %}{% endwith %}
+<form method="post">{% for f in doc.fields %}<label>{{ labels[f] }}<input name="{{f}}" required></label>{% endfor %}
+<button type="submit">Generate Document</button></form></main></body></html>
